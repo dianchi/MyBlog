@@ -14,6 +14,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "v16.13.1"
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
       - name: Build
         run: npm run build
       - name: Deploy
