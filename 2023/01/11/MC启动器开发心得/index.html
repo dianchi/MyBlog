@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="BatryCC">
+    <meta name="description" content="BatryCC的个人博客">
+    <meta name="author" content="BatryCC">
+    
+    <title>
+        
+            MC启动器开发心得 |
+        
+        应许之地-BatryCC的个人博客
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/redefine-logo.svg">
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/css2.css">
+
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"blog.batrycc.top","root":"/","language":"zh-CN"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"BatryCC个人博客"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.4.6","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                应许之地-BatryCC的个人博客
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <!-- Menu -->
+                            <a class="" 
+                                href="/" >
+                                
+                                    
+                                        <i class="fa-regular fa-house"></i>
+                                    
+                                    首页
+                                
+                            </a>
+                            <!-- Submenu -->
+                            
+                        </li>
+                    
+                        <li class="menu-item">
+                            <!-- Menu -->
+                            <a class="" 
+                                href="/archives" >
+                                
+                                    
+                                        <i class="fa-regular fa-archive"></i>
+                                    
+                                    归档
+                                
+                            </a>
+                            <!-- Submenu -->
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" 
+                       href="/" >
+                         
+                            
+                                <i class="fa-regular fa-house"></i>
+                            
+                            首页
+                        
+                    </a>
+                </li>
+                <!-- Submenu -->
+                
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" 
+                       href="/archives" >
+                         
+                            
+                                <i class="fa-regular fa-archive"></i>
+                            
+                            归档
+                        
+                    </a>
+                </li>
+                <!-- Submenu -->
+                
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">MC启动器开发心得</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">BatryCC</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-01-11 21:50:38</span>
+        <span class="mobile">2023-01-11 21:50</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <p>这几天翻仓库发现我以前写过MC的JE原版启动器，现在看看简直是堆屎山，就来以未来人视角审视一下自己的代码问题，并且谈一些MC启动器开发要用到的技术，这篇文章不重点将代码，而是启动器运行机理，和怎样做好启动器。</p>
+<h2 id="为什么有启动器"><a href="#为什么有启动器" class="headerlink" title="为什么有启动器"></a>为什么有启动器</h2><h3 id="启动器干什么"><a href="#启动器干什么" class="headerlink" title="启动器干什么"></a>启动器干什么</h3><p>启动器根据名称来看就知道，是一种用来启动的程序，启动什么？启动MC啊，还能启动什么。那启动器干了什么呢？<br>我们都知道MC:JE版是由Java编写的游戏，Java程序运行在JVM虚拟机中，而启动方式也和正常的二进制文件不同（当然部分Java写的发行程序会被打包成二进制程序，至少MC没这样做），我们常见的启动方式就是 <code>java -jar xxx.jar</code> 这样的启动方式，但MC肯定不能这样做啊，不然那么一大坨 &#x2F;.minecraft&#x2F; 文件夹干啥的，启动器还需要将MC所需要的依赖库，资源索引，玩家信息，JVM参数加载到虚拟机中一起启动，这样我们的MC才能正确的调用、加载。其实你完全可以手动编写启动命令，启动器只是帮你减少工作量，不然玩游戏还得看懂运行原理是不是太掉价了。但作为开发者，掌握这些至关重要。</p>
+<h3 id="启动器的附加功能"><a href="#启动器的附加功能" class="headerlink" title="启动器的附加功能"></a>启动器的附加功能</h3><p>如果单纯只是作为启动游戏来用的话不如用官方启动器，所以很多启动器作者为了让自己的启动器在市场抢占中占据优势，往往会选择给启动器加入各种附加功能。现在我们看到的第三方游戏启动器，最次的也会带一个Forge安装功能，像PCL等启动器还会加入诸如联机、MOD管理、CurseForge资源下载等等。启动器也渐渐变的不止“启动”了。其实在我们小时候的印象里，多玩MC盒子这类的MC盒子就已经有了这些概念（包括现在的网易中国版启动器），他们集成了游戏启动、好友联机、模组下载等等，构建了一个社区整体。只不过因为网易的铁拳，所以这些盒子的时代落下帷幕，取而代之的就是各类启动器的附加功能，这些附加功能往往不是直接由启动器作者运营，这样就不构成一个社区，网易也就没办法，所以我们还是管这些叫启动器，因为构成社区的就叫游戏盒子了。掌握这些附加功能会使你开发的启动器在市场中有优点。</p>
+<h2 id="正式动手吧"><a href="#正式动手吧" class="headerlink" title="正式动手吧"></a>正式动手吧</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>启动器的本质在上面已经说过了，那么我知道了运行原理，我该怎么实现呢？实际上就是解析字符串然后拼接成启动指令最后执行而已，就这么简单，在每个游戏的版本文件夹下面我们都会看到一个 <code>版本号.json</code> 文件，这里面提示了我们所需要加载的依赖库、JVM参数、和必须传递的其他参数，我们要做的，就是解析他们，然后拼合成启动指令。</p>
+<h3 id="正式制作"><a href="#正式制作" class="headerlink" title="正式制作"></a>正式制作</h3><h4 id="游戏下载"><a href="#游戏下载" class="headerlink" title="游戏下载"></a>游戏下载</h4><p>Minecraft的游戏下载你可以使用MCBBS源或者其他的下载源，我这里以官方下载源为例，其他的下载源请参考其文档，如果只是单纯的镜像站那代码部分可以通用。<br>我们通过访问 <a class="link"   target="_blank" rel="noopener" href="https://piston-meta.mojang.com/mc/game/version_manifest.json" >version_manifest.json<i class="fa-solid fa-up-right-from-square"></i></a> （本文主要使用v1版文件，也是比较通用的文件，其实你也可以自己对v2版进行解析 <a class="link"   target="_blank" rel="noopener" href="https://piston-meta.mojang.com/mc/game/version_manifest_v2.json" >version_manifest_v2.json<i class="fa-solid fa-up-right-from-square"></i></a> v2版新增了 sha1 和 complianceLevel 键值，具体作用可以自行 <a class="link"   target="_blank" rel="noopener" href="https://minecraft.fandom.com/wiki/Version_manifest.json" >MinecraftWiki<i class="fa-solid fa-up-right-from-square"></i></a>）可以看到一大长串的字符，不过不需要害怕，我们不需要一定看懂这些字符，只需要知道他是一个Json文件，并且我们只需要解析键值即可。下面我列出了一个经过我简化的Json文件，各位可以参照着用。</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;latest&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;release&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.19.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;snapshot&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.19.3&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;versions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.19.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;release&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://piston-meta.mojang.com/v1/packages/6607feafdb2f96baad9314f207277730421a8e76/1.19.3.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;time&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2022-12-07T08:58:43+00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;releaseTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2022-12-07T08:17:18+00:00&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;22w43a&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;snapshot&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://piston-meta.mojang.com/v1/packages/0fca847cf28d5caf18864ab7a31718094800abff/22w43a.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;time&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2022-12-07T09:22:42+00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;releaseTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2022-10-26T11:55:59+00:00&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.18.2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;release&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://piston-meta.mojang.com/v1/packages/23b6e0e0d0f87da36075a4290cd98df1a76e2415/1.18.2.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;time&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2022-12-07T08:58:43+00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;releaseTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2022-12-05T13:21:34+00:00&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+<p>上面就是我截取的json文件选段，怎么样，是不是看的清晰多了。我们现在一个个分析。在第一层下有 <code>&quot;latest&quot;</code> 和 <code>&quot;versions&quot;</code> 键， <code>&quot;latest&quot;</code> 下面主要存放的就是最新版本的版本号，其中 <code>&quot;release&quot;</code> 是指发行版最新版本号， <code>&quot;snapshot&quot;</code> 是指先行版发行的版本号。这个键值可以告诉启动器，究竟哪个版本是最新版本，让启动器实现下载最新版本的简化功能（防止有人无脑算法比版本大小，况且 <code>22w43a</code> 和 <code>1.19.3</code> 这样的版本号如果算法不够强劲多少会出错），其实你不加也可以，但是用户肯定不会满意。我们现在视线转移到最重要的 <code>&quot;versions&quot;</code> 键下，可以看到他以中括号开始，证明他是一个数组，数组里面存放的值就是每个独立的版本。我们单独取出一个值，比方说以 <code>versions[0]</code>（就是第一个值）来举例， <code>&quot;id&quot;</code> 键下面就是他的版本号，里面可以存放 “x.x.x” 这样的版本格式，也可以存放 “22w43a” 这样的格式， <code>&quot;type&quot;</code> 键值写了这个版本的类型，标有 “release” 说明他是一个正式版（发行版），标有 “snapshot” 说明他是一个测试版（快照版）。我们的启动器可以根据这个键值识别各个版本的类型，让用户下对他们想要的类型，一个大型发行版本下往往跟着诸多个快照版。 <code>&quot;url&quot;</code> 键值下包含了这个版本的索引文件地址，我们下载一个游戏，所需要的最根本的东西就是这个索引文件，人和下载都是建立在索引文件的基础上的，我们后续会继续讲解他的用法。 <code>&quot;time&quot;</code> 和 <code>&quot;releaseTime&quot;</code> 分别代表了这个版本的最后更新时间和发行时间，时间格式遵从 ISO 8601。<br>我们的启动器通过解析 <code>&quot;version_manifest.json&quot;</code> 列出了所有游戏版本，但当我们的用户点击下载的时候，我们的启动器又运行了什么呢。<br>启动器会先下载一个 <code>&quot;版本号.json&quot;</code> 文件（就是上文 <code>&quot;url&quot;</code> 键值下的那个文件），我后续说的各种文件的下载位置都是不固定的，包括这个，你可以把他下载到任何位置，只要你下次需要用的时候能解析到。不过为了通用，我们规定（或者官方启动器是这样做的）在启动器目录下新建一个 “.&#x2F;mincraft” 文件夹，文件夹里面有一个 “versions” 文件夹，用来装载游戏版本，至于 “versions” 文件夹里面需不需要再细分不同版本的不同文件夹要看用户需求，很多启动器提供的版本隔离，就是将不同的版本在 “versions” 文件夹下再新建一个以游戏名命名的文件夹，用来装载版本内容。在启动器下载完 <code>&quot;版本号.json&quot;</code> 文件，我们就可以通过解析这个本地文件来继续下载其他的需要用到的文件了。<br>我们任意打开一个 <code>&quot;版本号.json&quot;</code> 文件会看到以下内容。（下面的json是简化过的，并不是真正存在的，实际参数会比这个长很多，每个版本的json文件顺序都不同，但内容都是一样的）</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;arguments&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;game&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;--username&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;auth_player_name&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;--version&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;version_name&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;--gameDir&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;game_directory&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;--assetsDir&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;assets_root&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;--assetIndex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;assets_index_name&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;--uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;auth_uuid&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;--accessToken&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;auth_access_token&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;--clientId&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;clientid&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;--xuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;auth_xuid&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;--userType&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;user_type&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;--versionType&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;version_type&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;rules&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="punctuation">&#123;</span></span><br><span class="line">                        <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">                        <span class="attr">&quot;features&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                            <span class="attr">&quot;is_demo_user&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">                        <span class="punctuation">&#125;</span></span><br><span class="line">                    <span class="punctuation">&#125;</span></span><br><span class="line">                <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;--demo&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;rules&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="punctuation">&#123;</span></span><br><span class="line">                        <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">                        <span class="attr">&quot;features&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                            <span class="attr">&quot;has_custom_resolution&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">                        <span class="punctuation">&#125;</span></span><br><span class="line">                    <span class="punctuation">&#125;</span></span><br><span class="line">                <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="string">&quot;--width&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="string">&quot;$&#123;resolution_width&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="string">&quot;--height&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="string">&quot;$&#123;resolution_height&#125;&quot;</span></span><br><span class="line">                <span class="punctuation">]</span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;jvm&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;rules&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="punctuation">&#123;</span></span><br><span class="line">                        <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">                        <span class="attr">&quot;os&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;osx&quot;</span></span><br><span class="line">                        <span class="punctuation">&#125;</span></span><br><span class="line">                    <span class="punctuation">&#125;</span></span><br><span class="line">                <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="string">&quot;-XstartOnFirstThread&quot;</span></span><br><span class="line">                <span class="punctuation">]</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-Djava.library.path=$&#123;natives_directory&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-Dminecraft.launcher.brand=$&#123;launcher_name&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-Dminecraft.launcher.version=$&#123;launcher_version&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-cp&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;$&#123;classpath&#125;&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;assetIndex&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;sha1&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c492375ded5da34b646b8c5c0842a0028bc69cec&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;size&quot;</span><span class="punctuation">:</span> <span class="number">390746</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;totalSize&quot;</span><span class="punctuation">:</span> <span class="number">548701912</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://piston-meta.mojang.com/v1/packages/c492375ded5da34b646b8c5c0842a0028bc69cec/2.json&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;assets&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;complianceLevel&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;downloads&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;client&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;sha1&quot;</span><span class="punctuation">:</span> <span class="string">&quot;977727ec9ab8b4631e5c12839f064092f17663f8&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;size&quot;</span><span class="punctuation">:</span> <span class="number">22704188</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://piston-data.mojang.com/v1/objects/977727ec9ab8b4631e5c12839f064092f17663f8/client.jar&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;client_mappings&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;sha1&quot;</span><span class="punctuation">:</span> <span class="string">&quot;42366909cc612e76208d34bf1356f05a88e08a1d&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;size&quot;</span><span class="punctuation">:</span> <span class="number">7574170</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://piston-data.mojang.com/v1/objects/42366909cc612e76208d34bf1356f05a88e08a1d/client.txt&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;server&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;sha1&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c9df48efed58511cdd0213c56b9013a7b5c9ac1f&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;size&quot;</span><span class="punctuation">:</span> <span class="number">47162712</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;server_mappings&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;sha1&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bc44f6dd84cd2f3ad8c0caad850eaca9e82067e3&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;size&quot;</span><span class="punctuation">:</span> <span class="number">5852819</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://piston-data.mojang.com/v1/objects/bc44f6dd84cd2f3ad8c0caad850eaca9e82067e3/server.txt&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.19.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;javaVersion&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;component&quot;</span><span class="punctuation">:</span> <span class="string">&quot;java-runtime-gamma&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;majorVersion&quot;</span><span class="punctuation">:</span> <span class="number">17</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;libraries&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;downloads&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;artifact&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ca/weblite/java-objc-bridge/1.1/java-objc-bridge-1.1.jar&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;sha1&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1227f9e0666314f9de41477e3ec277e542ed7f7b&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;size&quot;</span><span class="punctuation">:</span> <span class="number">1330045</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://libraries.minecraft.net/ca/weblite/java-objc-bridge/1.1/java-objc-bridge-1.1.jar&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ca.weblite:java-objc-bridge:1.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;rules&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;os&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;osx&quot;</span></span><br><span class="line">                    <span class="punctuation">&#125;</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;downloads&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;artifact&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;sha1&quot;</span><span class="punctuation">:</span> <span class="string">&quot;54f5efc19bca95d709d9a37d19ffcbba3d21c1a6&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;size&quot;</span><span class="punctuation">:</span> <span class="number">947865</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://libraries.minecraft.net/com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;com.github.oshi:oshi-core:6.2.2&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;logging&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;client&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;argument&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-Dlog4j.configurationFile=$&#123;path&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;file&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;client-1.12.xml&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;sha1&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bd65e7d2e3c237be76cfbef4c2405033d7f91521&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;size&quot;</span><span class="punctuation">:</span> <span class="number">888</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://launcher.mojang.com/v1/objects/bd65e7d2e3c237be76cfbef4c2405033d7f91521/client-1.12.xml&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;log4j2-xml&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;mainClass&quot;</span><span class="punctuation">:</span> <span class="string">&quot;net.minecraft.client.main.Main&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;minimumLauncherVersion&quot;</span><span class="punctuation">:</span> <span class="number">21</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;releaseTime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2022-12-07T08:17:18+00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;time&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2022-12-07T08:17:18+00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;release&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+<p>我们现在来看这几个关键值， <code>&quot;arguments&quot;</code> 代表了这个版本的游戏启动时需要用到的参数，键下面还包含了两个值，分别是 <code>&quot;game&quot;</code> ， <code>&quot;jvm&quot;</code> 分别代表了游戏所需要的参数和游戏虚拟机环境下所需要的参数。这两个键都是数组类型，数组的每个值都是单独的一个参数。我们先看 <code>&quot;game&quot;</code> 数组的 0 , 1 这两个索引位置的值，分别为 <code>&quot;--username&quot;</code> ，和 <code>&quot;$&#123;auth_player_name&#125;&quot;</code> ，我们可以给他理解为一个传入用户名称的参数， <code>&quot;--username&quot;</code> 是参数名， <code>&quot;$&#123;auth_player_name&#125;&quot;</code> 是值，其中用 <code>&quot;$&#123;&#125;&quot;</code> 这样格式包被的是变量，也就是你可以自由替换这其中的内容，数组中的参数一个逗号就是一个空格，也就是我们上面这0,1索引的两个值变成启动参数会写成这样 <code>&quot;--username XXX&quot;</code> （XXX是用户名），在这个键下面我们还能发现 <code>&quot;rules&quot;</code> 键，这就是有条件的参数。比方说这段</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;rules&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;features&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;is_demo_user&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;--demo&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+<p>其中的 <code>&quot;action&quot;</code> 代表这个条件是否允许使用，值一般为 <code>&quot;allow&quot;</code> ， <code>&quot;features&quot;</code> 是指成立的条件，我们现在看到的这段写的是 <code>&quot;is_demo_user&quot;</code> 为 <code>&quot;true&quot;</code> 意思就是玩家为Demo玩家，如果这个条件为真，则向启动指令中加入 <code>&quot;value&quot;</code> 后面的值 （ <code>&quot;--demo&quot;</code> ）。<br>接下来我们来看 <code>&quot;jvm&quot;</code> 下面的值。 <code>&quot;rules&quot;</code> 同上，不过就是判断条件变成了系统判断。 <code>&quot;osx&quot;</code> 代表系统是 osx 系统 （苹果电脑的系统）, <code>&quot;windows&quot;</code> 代表是windows系统，<code>&quot;linux&quot;</code> 代表是linux系统。（这些条件都需要启动器自己解析自己判断）<br>接下来看 <code>&quot;assetIndex&quot;</code> 键，其中的 <code>&quot;id&quot;</code> 代表资源版本， <code>&quot;url&quot;</code> 代表资源索引文件位置，我们需要下载他并且储存在任意你可以调用到的位置（名字可以不改，也可以改成 游戏大版本号.json 比方说 1.19.json）。<br><code>&quot;assets&quot;</code> 和 上面 <code>&quot;assetIndex&quot;</code> 中的 <code>&quot;id&quot;</code> 一样。<br><code>&quot;complianceLevel&quot;</code> 代表这个版本是否为支持版本，1代表这个版本是支持版本，0代表不是，具体含义可以自行wiki。主要区分在mojang新加入的账户系统上面。<br><code>&quot;downloads&quot;</code> 下面包含的就是我们游戏的本体，他包括客户端（<code>&quot;client&quot;</code>）和服务端（<code>&quot;server&quot;</code>）两部分，其中客户端或服务端不仅包含一个本体的下载地址，还包含一个Mapping，这是函数的映射表，可以自行理解，与我们这篇教程教的深度关联不大，但是如果你能理解映射表，相信你的启动器一定能锦上添花。<br>你完全可以给你的启动器加一个开服功能，这些都是你自己的选择，我们这里重点讲如何启动游戏，所以我们的目光要放在 <code>&quot;client&quot;</code> 键下面，这个键下面最重要的是 <code>&quot;url&quot;</code> 键，它的值包含了客户端jar文件的下载地址，我们现在要做的就是下载客户端jar文件，把他保存到一个你能调用到的位置（还是上面那句话目录你可以自己选，只要你自己能调用得到就行，但是如果作为一个分发软件，你至少要遵守业界公用的目录规范）。<br><code>&quot;id&quot;</code> 键包含了这个游戏的版本号。<br><code>&quot;javaVersion&quot;</code> 键下面有一个 <code>&quot;majorVersion&quot;</code> 比较重要，它规范了这个游戏版本启动所需的java版本，如果你不想让用户启动不了游戏的话最好给你的启动器加入这个版本判断，这样如果他们用低版本启动游戏你可以进行提示。<br><code>&quot;libraries&quot;</code> 是较为重要，同时也是最麻烦的一个键。它包含了游戏所需的运行库名称，下载版本以及条件。我们现在截取一段一点点看。</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;downloads&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;artifact&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ca/weblite/java-objc-bridge/1.1/java-objc-bridge-1.1.jar&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;sha1&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1227f9e0666314f9de41477e3ec277e542ed7f7b&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;size&quot;</span><span class="punctuation">:</span> <span class="number">1330045</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://libraries.minecraft.net/ca/weblite/java-objc-bridge/1.1/java-objc-bridge-1.1.jar&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ca.weblite:java-objc-bridge:1.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;rules&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;os&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;osx&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+<p><code>&quot;downloads&quot;</code> 包含他的下载信息， <code>&quot;artifact&quot;</code>是文件信息，mojang这样设计json格式我并不明白为什么，可能下一阶段要在 <code>&quot;downloads&quot;</code> 下面加入其他的信息和 <code>&quot;artifact&quot;</code> 隔离开 ，<code>&quot;path&quot;</code> 记住这个值，我建议你按照他给你的位置进行存储，这样会减轻很多工作量（可以按照 <code>&quot;libraries/$&#123;path&#125;&quot;</code>这样的格式储存），很重要，后续启动游戏也需要他。 <code>&quot;url&quot;</code> 包含了这个库的下载位置，我们要做的就是下载他，然后保存到你可以调用得到的位置。但使用他是有前提的，条件就是 <code>&quot;rules&quot;</code> 下面的，使用这个库需要用户系统为 <code>&quot;osx&quot;</code> 也就是苹果系统（如果一个集合下面不包含 <code>&quot;rules&quot;</code> 就代表他是通用的库，所有系统都需要下载他）。我这给的示例只列出了几段运行库，实际上要比这多得多，各位可以取其中的几个，然后写成程序让程序自动下载。<br><code>&quot;logging&quot;</code> 键是给 log4j 报告生成使用的，我们只需要取其中的 <code>&quot;argument&quot;</code> 并把它加入参数就可以了。<code>&quot;mainClass&quot;</code> 是游戏的主类入口，后续我们会讲解用法。<code>&quot;minimumLauncherVersion&quot;</code> 是最小启动这个版本游戏的启动器版本，意义不明，好像是给官方启动器用的，我们不需要管他就可以了。剩下的键值意思我都解释过，不做过多赘述（所有我没标明意思的键值都代表和这篇教程无关，如果你想让启动器更加优秀你可以去wiki上面自行查找、研究）。</p>
+<h4 id="游戏启动"><a href="#游戏启动" class="headerlink" title="游戏启动"></a>游戏启动</h4><p>当我们下载好游戏后，终于到了激动人心的启动时刻，上文我讲解了各个值的意思，接下来就该用他们了，将这些键值拼接起来，我们先来看一段启动命令。搭配着这些启动命令来对照着 版本.json 看，相信你们能更好理解。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">G:\Minecraft\JDK17\bin\java.exe -Dminecraft.client.jar=.minecraft\versions\LauncherTest-Vanilla-1.19.2\LauncherTest-Vanilla-1.19.2.jar -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=16M -XX:-UseAdaptiveSizePolicy -XX:-OmitStackTraceInFastThrow -Xmn128m -Xmx4096m -Dfml.ignoreInvalidMinecraftCertificates=true -Dfml.ignorePatchDiscrepancies=true -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Djava.library.path=G:\Minecraft\.minecraft\versions\LauncherTest-Vanilla-1.19.2\natives -Dminecraft.launcher.brand=test -Dminecraft.launcher.version=0.1.1 -cp G:\Minecraft\.minecraft\libraries\com\mojang\logging\1.0.0\logging-1.0.0.jar;G:\Minecraft\.minecraft\libraries\com\mojang\blocklist\1.0.10\blocklist-1.0.10.jar;G:\Minecraft\.minecraft\libraries\com\mojang\patchy\2.2.10\patchy-2.2.10.jar;G:\Minecraft\.minecraft\libraries\com\github\oshi\oshi-core\5.8.5\oshi-core-5.8.5.jar;G:\Minecraft\.minecraft\libraries\net\java\dev\jna\jna\5.10.0\jna-5.10.0.jar;G:\Minecraft\.minecraft\libraries\net\java\dev\jna\jna-platform\5.10.0\jna-platform-5.10.0.jar;G:\Minecraft\.minecraft\libraries\org\slf4j\slf4j-api\1.8.0-beta4\slf4j-api-1.8.0-beta4.jar;G:\Minecraft\.minecraft\libraries\org\apache\logging\log4j\log4j-slf4j18-impl\2.17.0\log4j-slf4j18-impl-2.17.0.jar;G:\Minecraft\.minecraft\libraries\com\ibm\icu\icu4j\70.1\icu4j-70.1.jar;G:\Minecraft\.minecraft\libraries\com\mojang\javabridge\1.2.24\javabridge-1.2.24.jar;G:\Minecraft\.minecraft\libraries\net\sf\jopt-simple\jopt-simple\5.0.4\jopt-simple-5.0.4.jar;G:\Minecraft\.minecraft\libraries\io\netty\netty-common\4.1.77.Final\netty-common-4.1.77.Final.jar;G:\Minecraft\.minecraft\libraries\io\netty\netty-buffer\4.1.77.Final\netty-buffer-4.1.77.Final.jar;G:\Minecraft\.minecraft\libraries\io\netty\netty-codec\4.1.77.Final\netty-codec-4.1.77.Final.jar;G:\Minecraft\.minecraft\libraries\io\netty\netty-handler\4.1.77.Final\netty-handler-4.1.77.Final.jar;G:\Minecraft\.minecraft\libraries\io\netty\netty-resolver\4.1.77.Final\netty-resolver-4.1.77.Final.jar;G:\Minecraft\.minecraft\libraries\io\netty\netty-transport\4.1.77.Final\netty-transport-4.1.77.Final.jar;G:\Minecraft\.minecraft\libraries\io\netty\netty-transport-native-unix-common\4.1.77.Final\netty-transport-native-unix-common-4.1.77.Final.jar;G:\Minecraft\.minecraft\libraries\io\netty\netty-transport-classes-epoll\4.1.77.Final\netty-transport-classes-epoll-4.1.77.Final.jar;G:\Minecraft\.minecraft\libraries\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;G:\Minecraft\.minecraft\libraries\com\google\guava\guava\31.0.1-jre\guava-31.0.1-jre.jar;G:\Minecraft\.minecraft\libraries\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;G:\Minecraft\.minecraft\libraries\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;G:\Minecraft\.minecraft\libraries\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;G:\Minecraft\.minecraft\libraries\com\mojang\brigadier\1.0.18\brigadier-1.0.18.jar;G:\Minecraft\.minecraft\libraries\com\mojang\datafixerupper\5.0.28\datafixerupper-5.0.28.jar;G:\Minecraft\.minecraft\libraries\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;G:\Minecraft\.minecraft\libraries\com\mojang\authlib\3.11.49\authlib-3.11.49.jar;G:\Minecraft\.minecraft\libraries\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;G:\Minecraft\.minecraft\libraries\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;G:\Minecraft\.minecraft\libraries\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;G:\Minecraft\.minecraft\libraries\org\apache\httpcomponents\httpcore\4.4.14\httpcore-4.4.14.jar;G:\Minecraft\.minecraft\libraries\it\unimi\dsi\fastutil\8.5.6\fastutil-8.5.6.jar;G:\Minecraft\.minecraft\libraries\org\apache\logging\log4j\log4j-api\2.17.0\log4j-api-2.17.0.jar;G:\Minecraft\.minecraft\libraries\org\apache\logging\log4j\log4j-core\2.17.0\log4j-core-2.17.0.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl\3.3.1\lwjgl-3.3.1.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl\3.3.1\lwjgl-3.3.1-natives-windows.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl\3.3.1\lwjgl-3.3.1-natives-windows-x86.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-jemalloc\3.3.1\lwjgl-jemalloc-3.3.1.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-jemalloc\3.3.1\lwjgl-jemalloc-3.3.1-natives-windows.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-jemalloc\3.3.1\lwjgl-jemalloc-3.3.1-natives-windows-x86.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-openal\3.3.1\lwjgl-openal-3.3.1.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-openal\3.3.1\lwjgl-openal-3.3.1-natives-windows.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-openal\3.3.1\lwjgl-openal-3.3.1-natives-windows-x86.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-opengl\3.3.1\lwjgl-opengl-3.3.1.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-opengl\3.3.1\lwjgl-opengl-3.3.1-natives-windows.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-opengl\3.3.1\lwjgl-opengl-3.3.1-natives-windows-x86.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-glfw\3.3.1\lwjgl-glfw-3.3.1.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-glfw\3.3.1\lwjgl-glfw-3.3.1-natives-windows.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-glfw\3.3.1\lwjgl-glfw-3.3.1-natives-windows-x86.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-stb\3.3.1\lwjgl-stb-3.3.1.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-stb\3.3.1\lwjgl-stb-3.3.1-natives-windows.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-stb\3.3.1\lwjgl-stb-3.3.1-natives-windows-x86.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-tinyfd\3.3.1\lwjgl-tinyfd-3.3.1.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-tinyfd\3.3.1\lwjgl-tinyfd-3.3.1-natives-windows.jar;G:\Minecraft\.minecraft\libraries\org\lwjgl\lwjgl-tinyfd\3.3.1\lwjgl-tinyfd-3.3.1-natives-windows-x86.jar;G:\Minecraft\.minecraft\libraries\com\mojang\text2speech\1.13.9\text2speech-1.13.9.jar;G:\Minecraft\.minecraft\libraries\com\mojang\text2speech\1.13.9\text2speech-1.13.9-natives-windows.jar;G:\Minecraft\.minecraft\versions\LauncherTest-Vanilla-1.19.2\LauncherTest-Vanilla-1.19.2.jar net.minecraft.client.main.Main --username test --version &quot;test&quot; --gameDir G:\Minecraft\.minecraft --assetsDir G:\Minecraft\.minecraft\assets --assetIndex 1.19 --uuid $&#123;uuid&#125; --accessToken $&#123;accessToken&#125; --clientId $&#123;clientid&#125; --xuid $&#123;auth_xuid&#125; --userType mojang --versionType &quot;test&quot; --width 854 --height 480</span><br></pre></td></tr></table></figure></div>
+<p>是不是很长，没关系，这个命令是靠程序自动生成的，并不会让你手写，不过我们还是要理解他。接下来我们一起一点点看他是怎么运作的。<br><code>&quot;G:\Minecraft\JDK17\bin\java.exe&quot;</code> 代表了Java程序位置，你可以像这样的写法，如果电脑将java加入了系统环境变量，并且java版本正确能启动游戏，也可以直接写成 java 而不是这个绝对路径，但我还是劝你写出java程序所在的绝对路径，对后续版本管理很有用。<br><code>&quot;-Dminecraft.client.jar=$&#123;&#125;&quot;</code> 指定了游戏客户端的jar文件所在位置，也就是上文让你下载的 client.jar 位置。<br><code>&quot;-XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=16M -XX:-UseAdaptiveSizePolicy -XX:-OmitStackTraceInFastThrow&quot;</code> 就是通过解析 版本.json 文件的 <code>&quot;jvm&quot;</code> 键获取到的参数了，jvm参数的意思以及GC调优各位可以自行百度。<br><code>&quot;-Xmn128m -Xmx4096m&quot;</code> 是指这个jvm虚拟机的最小最大内存，你可以不加，也可以加上让用户自己选择分配内存。其中 “128”,”4096”就是内存大小，你只需要修改他们并且拼接字符串即可。<br><code>&quot;-Dfml.ignoreInvalidMinecraftCertificates=true -Dfml.ignorePatchDiscrepancies=true -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump&quot;</code>是通过解析 <code>&quot;game&quot;</code> 键下面的值而传入的游戏参数，注意，”-XX:HeapDumpPath”是jvm参数但是后面的值是通过解析 版本.json 文件获取到的，具体意思各位可以自行百度。<br>接下来就是重头戏了 <code>&quot;-Djava.library.path=&quot;</code> 参数后面传入运行库位置（绝对路径）。<br><code>&quot;-Dminecraft.launcher.brand=test -Dminecraft.launcher.version=0.1.1&quot;</code>分别传入启动器名称和启动器版本，根据你自己启动器的实况来，具体体现在游戏内 F3 状态面板的左下角。<br>最重要的 <code>&quot;-cp&quot;</code> 参数后面传入各个运行库位置（绝对路径，注意这里说的是各个，意思是你要把每个运行库jar文件传入，而不是大文件夹），每个运行库用 “;” 隔开。也就是上文解析 版本.json 文件并下载的运行库，到现在终于要用上了（注意上文说的 <code>&quot;rules&quot;</code> 中的条件，如果条件不正确加载不会成功，也就不会成功启动游戏），在所有运行库都传入完成后，后面跟着一个空格 <code>&quot;net.minecraft.client.main.Main&quot;</code> （这个值也是通过解析 版本.json 文件获取到的主类入口位置，如果mojang哪天抽风，可能主类入口就会改变，所以这个值是个变量，而不是常量）。<br>主类位置后面紧跟着就要传入游戏参数了（注意顺序，一定要先传入jvm参数，然后声明运行库和主类，最后传入游戏参数，不然会报错找不到参数）。这里的参数就是我们解析 版本.json 文件后获取到的 <code>&quot;arguments&quot;</code> 下面的 <code>&quot;game&quot;</code> 中的值。<br><code>&quot;--username test --version &quot;test&quot; --gameDir G:\Minecraft\.minecraft --assetsDir G:\Minecraft\.minecraft\assets --assetIndex 1.19 --uuid $&#123;uuid&#125; --accessToken $&#123;accessToken&#125; --clientId $&#123;clientid&#125; --xuid $&#123;auth_xuid&#125; --userType mojang --versionType &quot;test&quot;&quot;</code>分别传入了用户昵称、游戏版本（你可以自定义，也可以写正确的版本号，具体体现在游戏窗口标题上）、游戏目录（根据实际情况来，统一规范是要写在 .minecraft 下面），游戏资源目录（同上），游戏资源索引版本（每个大版本号是一个索引，储存在 assets&#x2F;indexes 下面，同时也是你上文索引文件的下载地址）、uuid、accessToken、clientId、xuid都是正版登录要用到的，通过请求mojang正版验证服务器获取到、用户类型（微软或mojang）、版本类型。<br><code>&quot;--width 854 --height 480&quot;</code> 就是上文说到的根据条件判断来加入的，他们代表了游戏窗口的大小。宽854，高480。<br>至此，游戏就可以正确启动了，如果你遇到了一些问题，请接着往下看。</p>
+<h4 id="错误解决"><a href="#错误解决" class="headerlink" title="错误解决"></a>错误解决</h4><p>游戏启动但是没有声音，可能是资源索引配置错误。<br>指令提示找不到参数”xxxxx”，检查启动指令顺序，游戏参数要传在主类后面。</p>
+<h3 id="一些小提示"><a href="#一些小提示" class="headerlink" title="一些小提示"></a>一些小提示</h3><p>如果你的针对用户是windows人群，你想要获取到电脑上的所有Java位置，然后通过 java -version 指令检查版本。你可以调用windows的索引功能并搜索java.exe，详情请见微软api文档。或者使用where java 指令（但是只能找到在C:&#x2F;&#x2F;Programe）下面的程序。<br>如果你想给游戏加入联机功能，你完全可以搭建一个基于frp的内网穿透服务器，然后将用户的服务器端口穿透出去（只是提议，但是要处理好安全问题）。<br>如果你想让用户能通过启动器下载到mods，你完全可以爬取curseforge上的内容（但是总感觉不厚道）。</p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：MC启动器开发心得</li>
+        <li>本文作者：BatryCC</li>
+        <li>创建时间：2023-01-11 21:50:38</li>
+        <li>
+            本文链接：https://blog.batrycc.top/2023/01/11/MC启动器开发心得/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E6%8A%80%E6%9C%AF/">#技术</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/01/11/%E9%9A%8F%E6%83%B3-1/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">随想-1</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>目录</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E5%90%AF%E5%8A%A8%E5%99%A8"><span class="nav-text">为什么有启动器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%99%A8%E5%B9%B2%E4%BB%80%E4%B9%88"><span class="nav-text">启动器干什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%99%A8%E7%9A%84%E9%99%84%E5%8A%A0%E5%8A%9F%E8%83%BD"><span class="nav-text">启动器的附加功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E5%8A%A8%E6%89%8B%E5%90%A7"><span class="nav-text">正式动手吧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E5%88%B6%E4%BD%9C"><span class="nav-text">正式制作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E4%B8%8B%E8%BD%BD"><span class="nav-text">游戏下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E5%90%AF%E5%8A%A8"><span class="nav-text">游戏启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3"><span class="nav-text">错误解决</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8F%90%E7%A4%BA"><span class="nav-text">一些小提示</span></a></li></ol></li></ol>
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">BatryCC. 版权所有.</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.4.6</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2023/1/1 00:00:00
+        </div>
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fa-solid fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
