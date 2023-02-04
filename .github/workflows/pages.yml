@@ -3,19 +3,21 @@ name: Pages
 on:
   push:
     branches:
-      - master # default branch
+      - master  # default branch
 
 jobs:
   pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # If your repository depends on submodule, please see: https://github.com/actions/checkout
+          submodules: recursive
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
         with:
-          node-version: "v16.13.1"
-      - name: install hexo
-        run: npm install -g hexo
+          node-version: '16'
       - name: Cache NPM dependencies
         uses: actions/cache@v2
         with:
@@ -23,8 +25,10 @@ jobs:
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
             ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
       - name: Build
-        run: hexo generate
+        run: npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
