@@ -14,8 +14,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "v16.13.1"
-      - name: Install Hexo
-        run: npm install -g hexo-cli
+      - name: install hexo
+        run: npm install -g hexo
       - name: Cache NPM dependencies
         uses: actions/cache@v2
         with:
@@ -24,7 +24,7 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-npm-cache
       - name: Build
-        run: npm run build
+        run: hexo generate
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
