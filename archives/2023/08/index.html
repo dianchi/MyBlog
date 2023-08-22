@@ -9,7 +9,7 @@
     
     <title>
         
-            PlanPlayerAnalytics使用Cloudflare生成的JKS证书 |
+            归档: 2023/8 |
         
         应许之地-BatryCC的个人博客
     </title>
@@ -101,7 +101,7 @@
                     
                         <li class="menu-item">
                             <!-- Menu -->
-                            <a class="" 
+                            <a class="active" 
                                 href="/archives" >
                                 
                                     
@@ -146,7 +146,7 @@
                 
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="" 
+                    <a class="active" 
                        href="/archives" >
                          
                             
@@ -175,157 +175,59 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="post-page-container">
-        <div class="article-content-container">
-            <div class="article-title">
-                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">PlanPlayerAnalytics使用Cloudflare生成的JKS证书</h1></span>
+    <div class="archive-container ">
+        
+<div class="archive-list-container">
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2023</span>
+                <span class="archive-year-post-count">[5]</span>
             </div>
-
-            
-                <div class="article-header">
-                    <div class="avatar">
-                        <img src="/images/redefine-avatar.svg">
-                    </div>
-                    <div class="info">
-                        <div class="author">
-                            <span class="name">BatryCC</span>
-                            
-                                <span class="author-label">lol</span>
-                            
-                        </div>
-                        <div class="meta-info">
-                            <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-02-04 15:51:00</span>
-        <span class="mobile">2023-02-04 15:51</span>
-    </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fa-regular fa-tags"></i>&nbsp;
-            <ul>
+            <ul class="article-list">
                 
-                    <li>
-                        <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2023/08/22/%E5%BA%94%E8%AE%B8%E4%B9%8B%E5%9C%B0%E7%BB%BC%E5%90%88%E4%BD%93/"
+                        >应许之地综合体</a>
+                        <span class="article-date">08-22</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2023/02/04/PlanPlayerAnalytics%E4%BD%BF%E7%94%A8Cloudflare%E7%94%9F%E6%88%90%E7%9A%84JKS%E8%AF%81%E4%B9%A6/"
+                        >PlanPlayerAnalytics使用Cloudflare生成的JKS证书</a>
+                        <span class="article-date">02-04</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2023/01/11/MC%E5%90%AF%E5%8A%A8%E5%99%A8%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97/"
+                        >MC启动器开发心得</a>
+                        <span class="article-date">01-11</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2023/01/11/%E9%9A%8F%E6%83%B3-1/"
+                        >随想-1</a>
+                        <span class="article-date">01-11</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2023/01/05/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%80%A7%E5%88%AB/"
+                        >这是我的性别</a>
+                        <span class="article-date">01-05</span>
                     </li>
                 
             </ul>
-        </span>
-    
-
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
+        </section>
     
 </div>
 
-                        </div>
-                    </div>
-                </div>
-            
-
-            <div class="article-content markdown-body">
-                <p>Em，我昨天在做服的时候一直在配置Plan Player Analytics插件的jks证书问题，搜集了很多资料，但是发现都太麻烦了，而且有的根本不能用，官方Wiki那个方法我也没搞懂，所以我自己整了个歪门邪道的方法能快速获取到jks证书供Plan插件使用</p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>Cloudflare不多说，不知道的自己百度都有，把你的域名dns解析到上面然后就可以用Cloudflare给域名签发证书了，我是签了15年的源服务器证书。然后我们就可以拿到PEM和Key了。我们将它复制下来，然后在本地创建pem和key文件用来存储这两个的内容。之后就可以进行操作了。我们接下来要用到openssl和JDK（笔者用的版本为17，亲测1.8会报错，所以最好用11往上的）中自带的keytool。</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>找到openssl的bin目录，找到openssl.exe文件，单击右键以管理员身份运行，打开命令行，输入命令：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkcs12 -export -out xxx.pfx -in xxx.pem -inkey xxx.key</span><br></pre></td></tr></table></figure></div>
-<p>该操作会要求你输入两次密码，切记这两次密码，后续还需要使用<br>之后就可以找到保存在你指定的位置的pfx文件了。<br>使用Keytool工具，将PFX格式证书文件转换成JKS格式，得到“xxx.jks”文件</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -importkeystore -srckeystore xxx.pfx -destkeystore xxx.jks -srcstoretype PKCS12 -deststoretype JKS</span><br></pre></td></tr></table></figure></div>
-<p>输入两次jks设定的密码，可以与上文的一样，然后输入一次上文设置的密码。<br>之后要切记你输入的两份密码，最好创建一个新的文件保存起来。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>接下来你指定的目录下应该就生成了jks文件了，将它塞到你的Plan插件文件夹下之后改名为Cert.jks<br>打开你的Plan&#x2F;config.yml找到如下键值</p>
-<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Security:</span></span><br><span class="line">    <span class="attr">SSL_certificate:</span></span><br><span class="line">        <span class="attr">KeyStore_path:</span> <span class="string">Cert.jks</span></span><br><span class="line">        <span class="attr">Key_pass:</span> <span class="string">pixelab</span>   <span class="comment">#pfx的密码</span></span><br><span class="line">        <span class="attr">Store_pass:</span> <span class="string">pixelab</span> <span class="comment">#jks的密码</span></span><br><span class="line">        <span class="attr">Alias:</span> <span class="number">1</span>            <span class="comment">#别名，cloudflare一般生成的都是 1 ，如果不是请看下面的解决方法</span></span><br></pre></td></tr></table></figure></div>
-<p>之后重启服务器就可以看到SSL被启用了，同时也可以正常注册、登录了</p>
-<h2 id="部分问题解决方法"><a href="#部分问题解决方法" class="headerlink" title="部分问题解决方法"></a>部分问题解决方法</h2><h3 id="别名不正确"><a href="#别名不正确" class="headerlink" title="别名不正确"></a>别名不正确</h3><p>输入 keytool -list -v -keystore xxx.jks 然后找到 alias一项，后面的就是别名了 </p>
-
-            </div>
-
-            
-                <div class="post-copyright-info">
-                    <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：PlanPlayerAnalytics使用Cloudflare生成的JKS证书</li>
-        <li>本文作者：BatryCC</li>
-        <li>创建时间：2023-02-04 15:51:00</li>
-        <li>
-            本文链接：https://blog.batrycc.top/2023/02/04/PlanPlayerAnalytics使用Cloudflare生成的JKS证书/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
-
-                </div>
-            
-
-            
-                <ul class="post-tags-box">
-                    
-                        <li class="tag-item">
-                            <a href="/tags/%E6%8A%80%E6%9C%AF/">#技术</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            
-
-            
-                <div class="article-nav">
-                    
-                        <div class="article-prev">
-                            <a class="prev"
-                            rel="prev"
-                            href="/2023/08/22/%E5%BA%94%E8%AE%B8%E4%B9%8B%E5%9C%B0%E7%BB%BC%E5%90%88%E4%BD%93/"
-                            >
-                                <span class="left arrow-icon flex-center">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </span>
-                                <span class="title flex-center">
-                                    <span class="post-nav-title-item">应许之地综合体</span>
-                                    <span class="post-nav-item">上一篇</span>
-                                </span>
-                            </a>
-                        </div>
-                    
-                    
-                        <div class="article-next">
-                            <a class="next"
-                            rel="next"
-                            href="/2023/01/11/MC%E5%90%AF%E5%8A%A8%E5%99%A8%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97/"
-                            >
-                                <span class="title flex-center">
-                                    <span class="post-nav-title-item">MC启动器开发心得</span>
-                                    <span class="post-nav-item">下一篇</span>
-                                </span>
-                                <span class="right arrow-icon flex-center">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </span>
-                            </a>
-                        </div>
-                    
-                </div>
-            
-
-            
-        </div>
-
-        
-            <div class="toc-content-container">
-                <div class="post-toc-wrap">
-    <div class="post-toc">
-        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>目录</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B"><span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E5%88%86%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-text">部分问题解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AB%E5%90%8D%E4%B8%8D%E6%AD%A3%E7%A1%AE"><span class="nav-text">别名不正确</span></a></li></ol></li></ol>
     </div>
 </div>
-            </div>
-        
-    </div>
-</div>
-
 
                 
 
@@ -394,23 +296,6 @@
         </div>
     </div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item page-aside-toggle">
-                <i class="fa-regular fa-outdent"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-    </ul>
-</div>
-
-        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -506,14 +391,6 @@
 
 
 <div class="post-scripts pjax">
-    
-        
-<script src="/js/toc-toggle.js"></script>
-
-<script src="/js/libs/anime.min.js"></script>
-
-<script src="/js/toc.js"></script>
-
     
 </div>
 
