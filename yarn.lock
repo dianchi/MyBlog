@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@adobe/css-tools@~4.3.1":
+  version "4.3.2"
+  resolved "https://repo.huaweicloud.com/repository/npm/@adobe/css-tools/-/css-tools-4.3.2.tgz#a6abc715fb6884851fca9dad37fc34739a04fd11"
+
 "@tootallnate/once@2":
   version "2.0.0"
   resolved "https://repo.huaweicloud.com/repository/npm/@tootallnate/once/-/once-2.0.0.tgz"
@@ -82,10 +86,6 @@ async@^3.2.3:
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://repo.huaweicloud.com/repository/npm/asynckit/-/asynckit-0.4.0.tgz"
-
-atob@^2.1.2:
-  version "2.1.2"
-  resolved "https://repo.huaweicloud.com/repository/npm/atob/-/atob-2.1.2.tgz"
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -219,14 +219,6 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-css@^3.0.0:
-  version "3.0.0"
-  resolved "https://repo.huaweicloud.com/repository/npm/css/-/css-3.0.0.tgz"
-  dependencies:
-    inherits "^2.0.4"
-    source-map "^0.6.1"
-    source-map-resolve "^0.6.0"
-
 cssom@^0.5.0:
   version "0.5.0"
   resolved "https://repo.huaweicloud.com/repository/npm/cssom/-/cssom-0.5.0.tgz"
@@ -268,10 +260,6 @@ debug@4, debug@^4.3.2:
 decimal.js@^10.4.2:
   version "10.4.3"
   resolved "https://repo.huaweicloud.com/repository/npm/decimal.js/-/decimal.js-10.4.3.tgz"
-
-decode-uri-component@^0.2.0:
-  version "0.2.2"
-  resolved "https://repo.huaweicloud.com/repository/npm/decode-uri-component/-/decode-uri-component-0.2.2.tgz"
 
 deep-is@~0.1.3:
   version "0.1.4"
@@ -594,12 +582,12 @@ hexo-renderer-marked@^6.1.1:
     jsdom "^20.0.1"
     marked "^4.3.0"
 
-hexo-renderer-stylus@^2.1.0:
-  version "2.1.0"
-  resolved "https://repo.huaweicloud.com/repository/npm/hexo-renderer-stylus/-/hexo-renderer-stylus-2.1.0.tgz"
+hexo-renderer-stylus@^3.0.1:
+  version "3.0.1"
+  resolved "https://repo.huaweicloud.com/repository/npm/hexo-renderer-stylus/-/hexo-renderer-stylus-3.0.1.tgz#7ff6f3101fa86ba25de415257be7fa7032e910bc"
   dependencies:
     nib "^1.2.0"
-    stylus "^0.57.0"
+    stylus "^0.62.0"
 
 hexo-server@^3.0.0:
   version "3.0.0"
@@ -742,7 +730,7 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inherits@2, inherits@2.0.4, inherits@^2.0.3, inherits@^2.0.4:
+inherits@2, inherits@2.0.4, inherits@^2.0.3:
   version "2.0.4"
   resolved "https://repo.huaweicloud.com/repository/npm/inherits/-/inherits-2.0.4.tgz"
 
@@ -1130,13 +1118,13 @@ safe-buffer@~5.2.0:
   version "5.2.1"
   resolved "https://repo.huaweicloud.com/repository/npm/safe-buffer/-/safe-buffer-5.2.1.tgz"
 
-"safer-buffer@>= 2.1.2 < 3.0.0", safer-buffer@^2.1.2:
+"safer-buffer@>= 2.1.2 < 3.0.0":
   version "2.1.2"
   resolved "https://repo.huaweicloud.com/repository/npm/safer-buffer/-/safer-buffer-2.1.2.tgz"
 
-sax@~1.2.4:
-  version "1.2.4"
-  resolved "https://repo.huaweicloud.com/repository/npm/sax/-/sax-1.2.4.tgz"
+sax@~1.3.0:
+  version "1.3.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/sax/-/sax-1.3.0.tgz#a5dbe77db3be05c9d1ee7785dbd3ea9de51593d0"
 
 saxes@^6.0.0:
   version "6.0.0"
@@ -1185,20 +1173,13 @@ shebang-regex@^3.0.0:
   version "3.0.0"
   resolved "https://repo.huaweicloud.com/repository/npm/shebang-regex/-/shebang-regex-3.0.0.tgz"
 
-source-map-resolve@^0.6.0:
-  version "0.6.0"
-  resolved "https://repo.huaweicloud.com/repository/npm/source-map-resolve/-/source-map-resolve-0.6.0.tgz"
-  dependencies:
-    atob "^2.1.2"
-    decode-uri-component "^0.2.0"
-
-source-map@^0.6.1, source-map@~0.6.1:
-  version "0.6.1"
-  resolved "https://repo.huaweicloud.com/repository/npm/source-map/-/source-map-0.6.1.tgz"
-
 source-map@^0.7.3:
   version "0.7.4"
   resolved "https://repo.huaweicloud.com/repository/npm/source-map/-/source-map-0.7.4.tgz"
+
+source-map@~0.6.1:
+  version "0.6.1"
+  resolved "https://repo.huaweicloud.com/repository/npm/source-map/-/source-map-0.6.1.tgz"
 
 sprintf-js@^1.0.3:
   version "1.1.2"
@@ -1230,15 +1211,14 @@ strip-indent@^3.0.0:
   dependencies:
     min-indent "^1.0.0"
 
-stylus@^0.57.0:
-  version "0.57.0"
-  resolved "https://repo.huaweicloud.com/repository/npm/stylus/-/stylus-0.57.0.tgz"
+stylus@^0.62.0:
+  version "0.62.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/stylus/-/stylus-0.62.0.tgz#648a020e2bf90ed87587ab9c2f012757e977bb5d"
   dependencies:
-    css "^3.0.0"
+    "@adobe/css-tools" "~4.3.1"
     debug "^4.3.2"
     glob "^7.1.6"
-    safer-buffer "^2.1.2"
-    sax "~1.2.4"
+    sax "~1.3.0"
     source-map "^0.7.3"
 
 supports-color@^7.1.0:
